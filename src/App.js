@@ -1,16 +1,18 @@
 import Home from './Components/Home';
 import Services from './Components/Services';
 import About from './Components/About';
+import Rock from './Components/Rock/Rock'
 import Contact from './Components/Contact';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import ErrorPage from './Components/ErrorPage';
+import Contacts from './Components/Contact/Contacts';
+import Card from './Components/BackgroundChange/Card'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-
-function App() {
+const App = () => {
   return (
     <Router>
       <div className="App">
@@ -19,6 +21,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
+          <Route path="/rock" element={<Rock />}/>
+          <Route path="/card" element={<Card />}/>
+          <Route path="/contacts" element={<Contacts />}/>
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
@@ -29,3 +34,5 @@ function App() {
 }
 
 export default App;
+
+

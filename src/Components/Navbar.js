@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <navbar className="navbar navbar-expand-sm py-4 bg-dark" style={{ borderBottom: '3px solid chocolate' }} >
+    <div className="navbar navbar-expand-sm py-4 bg-dark" style={{ borderBottom: '3px solid chocolate' }} >
       <div className="container">
         <div className="navbar-brand">
           <Link to="/" className='py-2'><span className='text-chocolate'>Windfall </span>Technologies</Link>
@@ -22,7 +22,7 @@ const Header = () => {
             </li>
         </ul>
       </div>
-    </navbar>
+    </div>
   )
 }
 
