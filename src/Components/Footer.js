@@ -34,6 +34,9 @@ const Footer = () => {
           <p className='my-2'>
             <Link to="/contacts">Contact Management</Link>
           </p>
+          <p className='my-2'>
+            <Link to="/counter">Counter</Link>
+          </p>
         </div>
         <div className="col-md-4 col-lg-4">
           

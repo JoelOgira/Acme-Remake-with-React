@@ -9,8 +9,10 @@ import ErrorPage from './Components/ErrorPage';
 import Contacts from './Components/Contact/Contacts';
 import Card from './Components/BackgroundChange/Card'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import DisplayCounter from './Components/Counter Display/DisplayCounter';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+
 
 const App = () => {
   return (
@@ -24,6 +26,7 @@ const App = () => {
           <Route path="/rock" element={<Rock />}/>
           <Route path="/card" element={<Card />}/>
           <Route path="/contacts" element={<Contacts />}/>
+          <Route path="/counter" element={<DisplayCounter />}/>
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>

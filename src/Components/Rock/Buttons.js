@@ -37,18 +37,19 @@ const Buttons = ({ handleComputerChoice, handleUserChoice, setResult }) => {
   return (
     <div className="container buttons my-4  ">
         <button className="btn btn-lg" 
-        onClick={() => (handleComputerChoice()) (handleUserChoice('Rock'))
+        onClick={() => (handleComputerChoice) (handleUserChoice('Rock'))
+        (handleResult('Rock'))
         }>
             Rock
         </button>
         <button className="btn btn-lg" 
-        onClick={() =>  (handleComputerChoice()) (handleUserChoice('Paper'))
+        onClick={() =>  (handleComputerChoice) (handleUserChoice('Paper'))
         (handleResult('Paper'))
         }>
             Paper
         </button>
         <button className="btn btn-lg" 
-        onClick={() =>  (handleComputerChoice()) (handleUserChoice('Rock'))
+        onClick={() =>  (handleComputerChoice) (handleUserChoice('Scissors'))
         (handleResult('Scissors'))
         }>
             Scissors
