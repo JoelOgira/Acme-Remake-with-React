@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 import Home from './Components/Home';
 import Services from './Components/Services';
 import About from './Components/About';
@@ -10,8 +12,7 @@ import Contacts from './Components/Contact/Contacts';
 import Card from './Components/BackgroundChange/Card'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import DisplayCounter from './Components/Counter Display/DisplayCounter';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import Challenge from './Components/Challenge/Challenge';
 
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/contacts" element={<Contacts />}/>
           <Route path="/counter" element={<DisplayCounter />}/>
           <Route path="/contact" element={<Contact />} />
+          <Route path="/challenge" element={<Challenge />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer/>

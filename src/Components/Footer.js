@@ -37,6 +37,9 @@ const Footer = () => {
           <p className='my-2'>
             <Link to="/counter">Counter</Link>
           </p>
+          <p className='my-2'>
+            <Link to="/challenge">Challenge</Link>
+          </p>
         </div>
         <div className="col-md-4 col-lg-4">
           
