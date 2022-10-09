@@ -13,7 +13,7 @@ const ContactList = ({contacts}) => {
                 </div>
                 </div>
             </div>
-        ))};
+        ))}
     </div>
   )
 }

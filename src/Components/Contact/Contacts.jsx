@@ -1,44 +1,46 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import AddContact from "./AddContact";
 import ContactList from "./ContactList";
 
 const Contacts = () => {
-  const [contacts, setContacts] = useState([
-    {
-        id: 1, 
-        info: 'Contact Information',
-        name: 'John Doe',
-        email: 'john@email.com',
-        phone: +255712345678
-    },
-    {
-        id: 2,
-        info: 'Contact Information',
-        name: 'Jane Hoe',
-        email: 'jane@email.com',
-        phone: +255712345678
-    },
-    {
-        id: 3,
-        info: 'Contact Information',
-        name: 'Henry Zoe',
-        email: 'Henry@email.com',
-        phone: +255712345678
-    },
-    {
-        id: 4,
-        info: 'Contact Information',
-        name: 'Julie Moe',
-        email: 'julie@email.com',
-        phone: +255712345678
+  const apiKey = 'http://localhost:7000/contacts';
+  const [contacts, setContacts] = useState([]);
+  const [fetchError, setFetchError] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchContacts = async () => {
+      try {
+        const response = await fetch (apiKey);
+        if (!response.ok) throw Error('Could not fetch contacts from database');
+        const data = await response.json();
+        console.log(data);
+        setContacts(data);
+        setFetchError(null);
+      } catch (error) {
+        setFetchError(error.message);
+      } finally {
+        setLoading(false);
+      }
     }
-])
+
+    fetchContacts();
+
+  }, [])
+  
+
   return (
     <div className="container">
-       <ContactList 
+      <AddContact />
+      <main>
+        {loading && <p className="text-center text-success my-4 py-4">Loading Contacts ... </p>}
+        {fetchError && <p className="text-center text-danger my-4 py-4">{`Ooops! ${fetchError}`}</p>}
+        {!fetchError && !loading && <ContactList 
         contacts={contacts}
-       /> 
+        />}
+      </main> 
     </div>
   )
 }
 
-export default Contacts
+export default Contacts;
